@@ -1,6 +1,6 @@
 package.path = package.path .. ";../common/?.lua;./?.lua"
 local common = require("common")
-local day1 = require("day1")
+local day2 = require("day2")
 
 local part2 = {}
 
@@ -21,10 +21,10 @@ function part2.run(filename)
     local total = 0
     for _, line in pairs(lines) do
         local maxCubes = {red=0, green=0, blue=0}
-        local game = day1.gameFromLine(line)
-        local sets = day1.setsFromGame(game)
+        local game = day2.gameFromLine(line)
+        local sets = day2.setsFromGame(game)
         for _, set in pairs(sets) do
-            local cubes = day1.getCubesFromSet(set)
+            local cubes = day2.getCubesFromSet(set)
             maxCubes = maximizeCubes(maxCubes, cubes)
         end
         total = total + cubesPower(maxCubes)

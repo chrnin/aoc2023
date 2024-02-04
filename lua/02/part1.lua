@@ -1,6 +1,6 @@
 package.path = package.path .. ";../common/?.lua;./?.lua"
 local common = require("common")
-local day1 = require("day1")
+local day2 = require("day2")
 
 local part1 = {}
 
@@ -24,11 +24,11 @@ function part1.run(filename)
     local total = 0
     for _, line in pairs(lines) do
         local ok = true
-        local number = day1.gameNumberFromLine(line)
-        local game = day1.gameFromLine(line)
-        local sets = day1.setsFromGame(game)
+        local number = day2.gameNumberFromLine(line)
+        local game = day2.gameFromLine(line)
+        local sets = day2.setsFromGame(game)
         for _, set in pairs(sets) do
-            local cubes = day1.getCubesFromSet(set)
+            local cubes = day2.getCubesFromSet(set)
             if not checkCubes(cubes, constraints) then
                 ok = false
             end
