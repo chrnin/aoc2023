@@ -19,6 +19,11 @@ jobs:
       run: |
         luarocks install busted
 
+    - name: test common code
+      run: |
+        cd lua/common/
+        lua test.lua
+        
     - name: test day 01
       run: |
         cd lua/01/
