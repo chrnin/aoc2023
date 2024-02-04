@@ -21,5 +21,10 @@ jobs:
 
     - name: test day 01
       run: |
-        cd 01
+        cd lua/01/
+        lua test.lua
+
+    - name: test day 02
+      run: |
+        cd lua/02/
         lua test.lua
