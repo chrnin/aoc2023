@@ -18,9 +18,8 @@ jobs:
     - name: build
       run: |
         luarocks install busted
-        luarocks make
 
     - name: test day 01
       run: |
         cd 01
-        busted -o utfTerminale%
+        lua test.lua
